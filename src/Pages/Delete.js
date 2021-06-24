@@ -7,13 +7,10 @@ import Select from "../Components/Select/Select";
 import renderData from "../helper/renderData";
 import Article from "../styled/GetContainer";
 import Grid from "@material-ui/core/Grid";
-import Error from "../styled/Error";
-import { useLocation } from "react-router-dom";
 import Title from "../styled/Title";
 
 const Delete = () => {
   const [users, setUsers] = useState(null);
-  console.log(users);
   const [sent, setSent] = useState(false);
   const [userID, setUserID] = useState("");
   const [method, setMethod] = useState("GET");
