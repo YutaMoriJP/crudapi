@@ -7,8 +7,8 @@ import IconButton from "../Button/IconButton";
 import styled from "styled-components";
 
 const Icon = styled(HelpIcon)`
-  width: 50px;
-  height: 40px;
+  width: 40px;
+  height: 30px;
   color: black;
 `;
 

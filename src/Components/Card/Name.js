@@ -1,8 +1,26 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
+import A from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { deepOrange } from "@material-ui/core/colors";
+import styled from "styled-components";
+
+const Text = styled.p`
+  font-size: 0.7rem;
+  font-weight: 900;
+  @media screen and (min-width: 500px) {
+    font-size: 1rem;
+  }
+`;
+
+const Avatar = styled(A)`
+  width: 30px;
+  height: 30px;
+  @media screen and (min-width: 500px) {
+    width: 40px;
+    height: 40px;
+  }
+`;
 
 const useStyles = makeStyles(theme => ({
   orange: {
@@ -27,9 +45,9 @@ const Name = ({ name, type, crossed }) => {
         </Avatar>
       </Grid>
       <Grid item style={{ alignSelf: "center" }}>
-        <h4>
+        <Text>
           {type} - {name}
-        </h4>
+        </Text>
       </Grid>
     </Grid>
   );

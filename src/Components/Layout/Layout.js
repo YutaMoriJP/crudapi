@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Global />
-      <Container maxWidth="md">
+      <Container>
         <Nav />
         <main>{children}</main>
       </Container>
