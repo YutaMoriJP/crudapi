@@ -12,6 +12,7 @@ const useFetch = (
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
+    let didCancel = false;
     setLoading(true);
     const controller = new AbortController();
     const signal = controller.signal;
@@ -28,11 +29,15 @@ const useFetch = (
               });
         if (res.ok) {
           const jsonRes = await res.json();
-          setData(jsonRes);
-          setLoading(false);
-          setError(false);
+          if (!didCancel) {
+            setData(jsonRes);
+            setLoading(false);
+            setError(false);
+          }
         } else {
-          setError(res);
+          if (!didCancel) {
+            setError(res);
+          }
         }
       } catch (e) {
         if (controller.aborted) {
@@ -43,7 +48,10 @@ const useFetch = (
       }
     };
     asyncReq();
-    return () => controller.abort();
+    return () => {
+      didCancel = true;
+      controller.abort();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url, method, sent]);
   return [data, loading, error];
