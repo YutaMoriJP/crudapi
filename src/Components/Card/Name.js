@@ -6,11 +6,8 @@ import { deepOrange } from "@material-ui/core/colors";
 import styled from "styled-components";
 
 const Text = styled.p`
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 900;
-  @media screen and (min-width: 500px) {
-    font-size: 1rem;
-  }
 `;
 
 const Avatar = styled(A)`

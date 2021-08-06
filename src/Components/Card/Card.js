@@ -12,7 +12,7 @@ const Card = ({ user, title, crossed }) => {
   const { pathname } = useLocation();
   const classes = useStyle();
   return (
-    <Grid item xs={12} sm={10} md={6}>
+    <Grid item xs={12} sm={8} md={5}>
       <Paper elevation={10} className={classes.root}>
         <h1
           style={{
