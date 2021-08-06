@@ -8,6 +8,8 @@ import renderData from "../helper/renderData";
 import Article from "../styled/GetContainer";
 import Grid from "@material-ui/core/Grid";
 import Title from "../styled/Title";
+import Box from "../Components/Box/Box";
+import useTitle from "../useHook/useTitle";
 
 const Delete = () => {
   const [users, setUsers] = useState(null);
@@ -36,6 +38,7 @@ const Delete = () => {
       setCrossed(true);
     }
   };
+  useTitle("DELETE page");
   return (
     <Layout>
       <Article>
@@ -49,11 +52,11 @@ const Delete = () => {
         )}
       </Article>
       <Title>DELETE Request</Title>
-      <p>
+      <Box>
         Choose the user you want to delete from the options menu and then click
         the 'Send Delete Request' button. Click on the <strong>?</strong> icon
         to learn more.
-      </p>
+      </Box>
 
       <Button onClick={handleDelete}>Send Delete Request</Button>
       <Grid container justify="center" spacing={1}>

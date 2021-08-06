@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const FormStyled = styled.article`
   background-color: #f1f3f5;
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  min-width: 180px;
+  margin: 0.4rem auto;
   padding: 10px;
   border-radius: 10px;
   display: flex;

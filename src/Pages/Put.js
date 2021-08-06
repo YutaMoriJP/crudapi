@@ -15,6 +15,8 @@ import updateBody from "../helper/updateBody";
 import Article from "../styled/GetContainer";
 import Grid from "@material-ui/core/Grid";
 import Title from "../styled/Title";
+import Box from "../Components/Box/Box";
+import useTitle from "../useHook/useTitle";
 
 const Put = () => {
   const [users, setUsers] = useState(null);
@@ -64,19 +66,19 @@ const Put = () => {
       ])
     );
   };
-
+  useTitle("PUT Page");
   return (
     <Layout>
       <Article>
         {users && <Select options={users} setQuery={setUserID} />}
       </Article>
       <Title>PUT Request</Title>
-      <p>
-        In the PUT Request page, you can select specific user profiles that are
+      <Box>
+        On the PUT Request page, you can select specific user profiles that are
         stored in the database and update the user data. You can update all the
         data or only update speicifc parts, like the username. Click on{" "}
         <strong>?</strong> to learn more.
-      </p>
+      </Box>
       <Form onClick={handleSubmit} direction="column">
         <p>
           Please ensure you fill <strong>at least one field</strong> and use the

@@ -11,6 +11,8 @@ import Button from "../Components/Button/Button";
 import renderData from "../helper/renderData";
 import Grid from "@material-ui/core/Grid";
 import Title from "../styled/Title";
+import Box from "../Components/Box/Box";
+import useTitle from "../useHook/useTitle";
 
 const Post = () => {
   const [name, resetName] = useInput("");
@@ -37,13 +39,14 @@ const Post = () => {
       setError(errorMessage(name.value, username.value, age.value));
     }
   };
+  useTitle("POST PAGE");
   return (
     <Layout>
       <Title>POST Request</Title>
-      <p>
-        In the POST Request page, you can create a new user that will be stored
+      <Box>
+        On the POST Request page, you can create a new user that will be stored
         in the database. Learn more by clicking on the <strong>?</strong> icon.
-      </p>
+      </Box>
       <Form direction="column" onClick={handleSubmit}>
         <p>
           Please ensure you fill <strong>all fields</strong>, and then click the

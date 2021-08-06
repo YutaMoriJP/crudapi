@@ -15,8 +15,6 @@ const Select = ({ options, setQuery, setCrossed = () => null, sent }) => {
     setCrossed(false);
   };
   useEffect(() => setSelectedValue(null), [sent]);
-  console.log(selectedValue);
-  console.log(options);
   return (
     <Container>
       <ReactSelect

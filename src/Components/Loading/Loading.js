@@ -12,26 +12,16 @@ const Loading = ({ color = "primary", isText = false }) => {
   const classes = useStyle();
   return (
     <article aria-describedby="loading page" className={classes.root}>
-      {isText && <h1>It may take a couple seconds. Please wait...</h1>}
+      {isText && (
+        <h1>Heroku is warming up... It may take a couple seconds. </h1>
+      )}
       <CircularProgress color={color} className={classes.spinner} />
     </article>
   );
 };
 
-const PropType = {
-  string(props, propName, componentName) {
-    if (typeof props[propName] !== "string") {
-      return new Error(
-        `The passed in prop ${propName} is supposed to be a string but it's ${typeof props[
-          propName
-        ]} in the component ${componentName}`
-      );
-    }
-  },
-};
-
 Loading.propTypes = {
-  color: PropType.string,
+  color: PropTypes.string,
   isText: PropTypes.bool,
 };
 

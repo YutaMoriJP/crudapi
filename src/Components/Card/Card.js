@@ -17,6 +17,8 @@ const Card = ({ user, title, crossed }) => {
         <h1
           style={{
             textAlign: "center",
+            fontSize: "1.4rem",
+            textTransform: "uppercase",
             textDecoration: pathname === "/delete" && crossed && "line-through",
           }}
         >
