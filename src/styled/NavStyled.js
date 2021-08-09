@@ -13,14 +13,16 @@ const Nav = styled.nav`
   }
   @media screen and (max-width: 500px) {
     gap: 5px;
-    max-width: 90%;
     margin: auto;
     button {
-      padding: 2px;
-      margin: 2px;
+      width: max-content;
+      padding: 1px;
+      margin: 1px;
     }
     span {
-      font-size: 0.6rem;
+      width: max-content;
+
+      font-size: 0.5rem;
     }
   }
 `;

@@ -20,7 +20,13 @@ const useFetch = (
       try {
         const res =
           method === "GET" || method === "DELETE"
-            ? await fetch(url, { method, headers, signal })
+            ? await fetch(url, {
+                method,
+                headers,
+                mode: "cors",
+                cache: "default",
+                signal,
+              })
             : await fetch(url, {
                 method,
                 headers,
