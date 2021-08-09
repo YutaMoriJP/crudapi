@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const useFetch = (
   url,
   method = "GET",
-  headers = { "Content-Type": "application/json" },
+  headers = { "Content-Type": "application/json", Authorization: "basic" },
   body,
   sent,
   requested
@@ -31,6 +31,8 @@ const useFetch = (
                 method,
                 headers,
                 body: JSON.stringify(body),
+                mode: "cors",
+                cache: "default",
                 signal,
               });
         if (res.ok) {
